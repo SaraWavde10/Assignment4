@@ -8,7 +8,7 @@
 // Parameterised constructor
 FourMomentum::FourMomentum(double E, double Px, double Py, double Pz)
 {
-    std::cout << "Calling FourMomentum parameterised constructor..." << std::endl;
+    //std::cout << "Calling FourMomentum parameterised constructor..." << std::endl;
     if (E<0) {
         std::cout << "Warning: Energy cannot be negative! Setting to 0" << std::endl;
         E = 0;
@@ -23,7 +23,7 @@ FourMomentum::FourMomentum(double E, double Px, double Py, double Pz)
 // Destructor
 FourMomentum::~FourMomentum()
 {
-    std::cout << "Now Calling FourMomentum destructor..." << std::endl;
+    //std::cout << "Now Calling FourMomentum destructor..." << std::endl;
     delete components;
     components = nullptr;
 }
@@ -31,7 +31,7 @@ FourMomentum::~FourMomentum()
 // Copy constructor: perform deep copy instead of shallow for safety
 FourMomentum::FourMomentum(const FourMomentum& other)
 {
-    std::cout << "Calling FourMomentum copy constructor" << std::endl;
+    //std::cout << "Calling FourMomentum copy constructor" << std::endl;
     if (other.components)
         components = new std::vector<double>(*other.components);
     else
@@ -41,7 +41,7 @@ FourMomentum::FourMomentum(const FourMomentum& other)
 // Copy assignment and call it for user to see
 FourMomentum& FourMomentum::operator=(const FourMomentum& other)
 {
-    std::cout << "Calling FourMomentum copy assignment" << std::endl;
+    //std::cout << "Calling FourMomentum copy assignment" << std::endl;
     if (this == &other) return *this;          // ensuring a copy isn't made
     delete components;                           // free the pre-existing memory
     components = new std::vector<double>(*other.components); // perform deep copy
@@ -51,7 +51,7 @@ FourMomentum& FourMomentum::operator=(const FourMomentum& other)
 // Move constructor: steal the pointer
 FourMomentum::FourMomentum(FourMomentum&& other)
 {
-    std::cout << "Calling FourMomentum move constructor" << std::endl;
+    //std::cout << "Calling FourMomentum move constructor" << std::endl;
     components = other.components;   // steal
     other.components = nullptr;      // leave old object empty
 }
@@ -59,7 +59,7 @@ FourMomentum::FourMomentum(FourMomentum&& other)
 // Move assignment
 FourMomentum& FourMomentum::operator=(FourMomentum&& other)
 {
-    std::cout << "Calling FourMomentum move assignment" << std::endl;
+    // std::cout << "Calling FourMomentum move assignment" << std::endl;
     if (this == &other) return *this;
     delete components;
     components = other.components;

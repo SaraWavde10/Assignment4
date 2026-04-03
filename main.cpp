@@ -24,7 +24,7 @@ int main()
     };
 
     // Summation of the 4-momenta of the two electrons
-    std::cout << "\n--- Summing two electrons ---\n";
+    // std::cout << "\n--- Summing two electrons ---\n";
     FourMomentum eSum = particles[0].getFourMomentum() + particles[1].getFourMomentum();
 
     std::cout << "Sum: E=" << eSum.getE()
@@ -38,23 +38,23 @@ int main()
     std::cout << "Dot product = " << dp << std::endl;
 
     // Copy assignment: electron to new electron 
-    std::cout << "\n--- Copy assignment ---\n";
+    // std::cout << "\n--- Copy assignment ---\n";
     Particle assignedElectron = particles[0];   // calls copy constructor here actually
     assignedElectron = particles[1];            // this calls copy assignment
 
     // Copy constructor: first muon to new muon 
-    std::cout << "\n--- Copy constructor ---\n";
+    // std::cout << "\n--- Copy constructor ---\n";
     Particle copiedMuon(particles[2]);
 
     // Move constructor: antielectron 
-    std::cout << "\n--- Move constructor ---\n";
+    // std::cout << "\n--- Move constructor ---\n";
     Particle movedAntielectron(std::move(particles[8]));
 
     // Move assignment: antimuon
-    std::cout << "\n--- Move assignment ---\n";
+    // std::cout << "\n--- Move assignment ---\n";
     Particle movedAntimuon("antimuon", 105.66, 0.0, 0.0, 0.0);
     movedAntimuon = std::move(particles[9]);
 
-    std::cout << "\n--- End of main, will now use destructors ---\n";
+    // std::cout << "\n--- End of main, will now use destructors ---\n";
     return 0;
 }

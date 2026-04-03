@@ -19,7 +19,7 @@ bool Particle::isValidName(const std::string& n)
 Particle::Particle(const std::string& n, double E, double Px, double Py, double Pz)
     : name(n), fourMomentum(E, Px, Py, Pz)
 {
-    std::cout << "Calling Particle parameterised constructor" << std::endl;
+    //std::cout << "Calling Particle parameterised constructor" << std::endl;
     if (!isValidName(n)) {
         std::cout << "Warning: invalid particle name: " << n << ", setting to electron" << std::endl;
         name = "electron";
@@ -28,20 +28,20 @@ Particle::Particle(const std::string& n, double E, double Px, double Py, double 
 // Destructor
 Particle::~Particle()
 {
-    std::cout << "Calling Particle destructor for " << name << std::endl;
+    //std::cout << "Calling Particle destructor for " << name << std::endl;
 }
 
 // Copy constructor: perform deep copy instead of shallow for safety
 Particle::Particle(const Particle& other)
     : name(other.name), fourMomentum(other.fourMomentum)
 {
-    std::cout << "Calling Particle copy constructor" << std::endl;
+    //std::cout << "Calling Particle copy constructor" << std::endl;
 }
 
 // Copy assignment and call it for user to see
 Particle& Particle::operator=(const Particle& other)
 {
-    std::cout << "Calling Particle copy assignment" << std::endl;
+    //std::cout << "Calling Particle copy assignment" << std::endl;
     if (this == &other) return *this;
     name         = other.name;
     fourMomentum = other.fourMomentum;  // calls FourMomentum copy assignment
@@ -52,13 +52,13 @@ Particle& Particle::operator=(const Particle& other)
 Particle::Particle(Particle&& other)
     : name(std::move(other.name)), fourMomentum(std::move(other.fourMomentum))
 {
-    std::cout << "Calling Particle move constructor" << std::endl;
+    //std::cout << "Calling Particle move constructor" << std::endl;
 }
 
 // Move assignment
 Particle& Particle::operator=(Particle&& other)
 {
-    std::cout << "Calling Particle move assignment" << std::endl;
+    //std::cout << "Calling Particle move assignment" << std::endl;
     if (this == &other) return *this;
     name         = std::move(other.name);
     fourMomentum = std::move(other.fourMomentum);
