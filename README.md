@@ -33,7 +33,7 @@ single four-vector called the four-momentum:
 All values are in MeV (megaelectronvolts). The dot product of the two four-momenta is a Lorentz invariant, which is the same result in all frames of references. 
 It is defined as
 
-    $$P1 · P2 = E1*E2 - px1*px2 - py1*py2 - pz1*pz2$$
+    $$ P1 · P2 = E_{1}E_{2} - p_{x1}p_{x2} - p_{y1}p_{y2} - p_{z1}p_{z2}$$
 
 This is useful to understand particle collisions. 
 
@@ -63,6 +63,12 @@ The code is split into two classes:
   copy constructor, move constructor, move assignment
 - All constructor/destructor calls are printed to show the Rule of 5 in action
  
+## Workflow Record
+- 30 March: recapped concepts and syntax with mix of YouTube videos and AI. Wrote pseudo code version
+- 2 April: During the day I prepared my skeleton code and write the .h files. At night I started the first CPP files. In between I drafted my README.md locally
+- 3 April: Write the rest of the CPP files. Struggled here more so watched videos etc. 
+- 4 April: updated README.md
+
 
 ## Disclosure of Delegation to Generative AI
 
